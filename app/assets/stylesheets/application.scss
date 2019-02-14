@@ -13,3 +13,55 @@
 @import "layouts/index";
 @import "components/index";
 @import "pages/index";
+
+body {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.title {
+  text-align: center;
+}
+
+.container {
+  width: 80vw;
+}
+
+.restaurant-card {
+  width: 250px;
+  height: 150px;
+  border: 1px solid lightgrey;
+  margin: 10px;
+  box-shadow: 0px 0px 10px 1px lightgrey;
+}
+
+
+.restaurant-card .image {
+  width: 100%;
+  height: 70%;
+  background: grey;
+  position: relative;
+}
+
+.restaurant-card .address {
+  font-size: 16px;
+}
+
+.restaurant-card h2 {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 20px;
+  margin: 0;
+  line-height: 100%;
+}
+
+.restaurant-card a {
+  text-decoration: none;
+  color: white;
+  text-shadow: 1px 1px 1px 1px black;
+}
+
+
+

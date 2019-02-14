@@ -1,0 +1,29 @@
+<h1><%= @restaurant.name %></h1>
+
+<p><%= @restaurant.category %> food</p>
+
+<p>we are located at <%= @restaurant.address %></p>
+
+<p>Contact us at <%= @restaurant.phone_number %></p>
+
+
+<div>
+  <%= link_to "Add a review to this restaurant", reviews_path, class: "btn btn-primary"%>
+</div>
+
+<%= link_to "Back to all Restaurants", root_path, class: "btn btn-primary"%>
+
+<h2>Reviews for this restaurant</h2>
+<% restaurant_reviews = [] %>
+<% reviews = Review.all %>
+<% reviews.each do |review| %>
+  <% restaurant_reviews << review unless review.restaurant.id != @restaurant.id %>
+<% end %>
+
+<div>
+  <ul>
+    <% restaurant_reviews.each do |review| %>
+      <%= review.content %>
+    <% end %>
+  </ul>
+</div>
